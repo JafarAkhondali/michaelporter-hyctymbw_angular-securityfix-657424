@@ -3,4 +3,5 @@ a few months ago:
 
   http://www.haveyouconsideredthatyoumightbewrong.com
 
-
+The server is a super naive Node.js implementation, but it serves for the
+purpose of getting to know Angular.

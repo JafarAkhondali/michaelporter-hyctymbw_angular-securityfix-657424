@@ -6,9 +6,9 @@
 
   <body ng-controller='FactsController'>
 
-    <input type='hidden' ng-model='randomFact' value="{{ randomFact }}" />
+    <input type='hidden' ng-model='randomFact' />
 
-    <p>{{ randomFact }}</p>
+    <p>{{ randomFact.fact || defaultFact }}</p>
 
     <button ng-click='getRandomFact();'>New Fact</button>
 

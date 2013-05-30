@@ -4,16 +4,17 @@ var fs = require('fs');
 var requestListener = function(req, res) {
   var fileName = "." + (req.url == '/' ? '/index.html' : req.url);
 
-  var headers = getContentType(getFileExtension(fileName));
+  var fileExt = getFileExtension(fileName);
+  var headers = getContentType(fileExt);
   res.writeHead(200, headers);
 
-  var fileContent = fs.readFileSync(fileName);
-  res.write(fileContent);
+  if (fileExt == '.js' || fileExt == '.html' || fileExt == '.css') {
+    var fileContent = fs.readFileSync(fileName);
+    res.write(fileContent);
+  }
 
   res.end();
 }
-
-
 
 var port = process.env.PORT || 8124;
 var server = http.createServer(requestListener).listen(port);

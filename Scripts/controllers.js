@@ -1,5 +1,6 @@
 var FactsController = function($scope, factService) {
   function init() {
+    $scope.defaultFact = "You are probably more wrong than you are right";
     $scope.getRandomFact();
   }
 
