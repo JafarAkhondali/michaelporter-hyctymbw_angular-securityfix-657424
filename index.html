@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='wrong'>
+  <head>
+    <title>Test of Angular Wrong</title>
+  </head>
+
+  <body ng-controller='FactsController'>
+
+    <input type='hidden' ng-model='randomFact' value="{{ randomFact }}" />
+
+    <p>{{ randomFact }}</p>
+
+    <button ng-click='getRandomFact();'>New Fact</button>
+
+    <script src='Scripts/angular.min.js'></script>
+    <script src='Scripts/app.js'></script>
+    <script src='Scripts/services.js'></script>
+    <script src='Scripts/controllers.js'></script>
+  </body>
+</html>
+
