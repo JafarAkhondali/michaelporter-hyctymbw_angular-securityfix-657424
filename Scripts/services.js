@@ -3,8 +3,6 @@ var factService = function($http) {
   this.facts = [];
 
   this.getFacts = function() {
-    var facts = [];
-
     var baseUrl = 'http://haveyouconsideredthatyoumightbewrong.com';
     var requestUrl = baseUrl + '/api/v1/facts';
 
@@ -21,7 +19,7 @@ var factService = function($http) {
 
   this.getRandomFact = function() {
     var facts = that.factsEmpty() ? that.getFacts() : that.facts;
-    var i = Math.floor((Math.random() * ((facts.length) - 0)) + 0);
+    var i = Math.floor(Math.random() * facts.length);
 
     return facts[i];
   }
